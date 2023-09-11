@@ -48,3 +48,7 @@ small {
   top: -45px;
   right: -60px;
 }
+
+#description{
+  text-transform: capitalize;
+}
