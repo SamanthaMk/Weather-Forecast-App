@@ -26,5 +26,25 @@ li {
   padding: 0;
   font-size: 16px;
   font-weight: 100;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+small {
+  margin-top: 0;
+}
+.weather-temp {
+  margin-bottom: 20px;
+  height: 64px;
+  width: 64px;
+}
+.weather-temp strong {
+  color: rgb(59, 12, 103);
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1;
+}
+.weather-temp .units{
+  position: relative;
+  font-size: 20px;
+  top: -45px;
+  right: -60px;
 }
