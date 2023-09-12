@@ -27,6 +27,8 @@ function showWeather(response) {
   console.log(response.data.city);
   console.log(response.data.temperature.current);
   console.log(response.data.condition.description);
+  console.log(response.data.condition.icon_url);
+
 
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
@@ -45,6 +47,10 @@ function showWeather(response) {
 
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = currentDate(response.data.time * 1000);
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src",response.data.condition.icon_url);
+
 }
 function search(city) {
   let apiKey = "b19t9a07a57a44df163do01147f91d11";
