@@ -21,6 +21,30 @@ function currentDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+let forecastHTML = "";
+let days = ["FRI", "SAT", "SUN", "MON", "TUE", "WEN"];
+days.forEach(function (day) {
+  forecastHTML =
+    forecastHTML +
+    `
+  <li>
+   <span class="weather-forecast-date">${day}</span>
+   <img
+     src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+     alt="sunny icon"
+     width="50"
+   />
+   <span class="weather-forecast-temp">27° 13° </span>
+ </li>`;
+})
+
+forecastElement.innerHTML = forecastHTML;
+console.log(forecastHTML);
+}
+
 function showWeather(response) {
   console.log(response);
   console.log(response.data);
@@ -52,7 +76,6 @@ function showWeather(response) {
   iconElement.setAttribute("src",response.data.condition.icon_url);
 
   celsiusTemperature = response.data.temperature.current;
-
 }
 
 function search(city) {
@@ -87,6 +110,8 @@ temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
 let celsiusTemperature = null;
 
+
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -97,3 +122,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
 
 search("Midrand");
+displayForecast();
