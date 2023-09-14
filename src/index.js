@@ -21,7 +21,11 @@ function currentDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
+  console.log(response);
+  console.log(response.data);
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
 let forecastHTML = "";
@@ -45,6 +49,13 @@ forecastElement.innerHTML = forecastHTML;
 console.log(forecastHTML);
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "b19t9a07a57a44df163do01147f91d11";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 function showWeather(response) {
   console.log(response);
   console.log(response.data);
@@ -76,6 +87,8 @@ function showWeather(response) {
   iconElement.setAttribute("src",response.data.condition.icon_url);
 
   celsiusTemperature = response.data.temperature.current;
+  console.log(response);
+  getForecast(response.data.coordinates);
 }
 
 function search(city) {
@@ -110,8 +123,6 @@ temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
 let celsiusTemperature = null;
 
-
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -122,4 +133,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
 
 search("Midrand");
-displayForecast();
