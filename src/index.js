@@ -21,27 +21,33 @@ function currentDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function dayFormat(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN","MON", "TUE", "WEN", "THU", "FRI", "SAT"];
+
+return days[day];
+} 
+
+
 function displayForecast(response) {
-  console.log(response.data);
-  console.log(response);
-  console.log(response.data);
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
 let forecastHTML = "";
-let days = ["FRI", "SAT", "SUN", "MON", "TUE", "WEN"];
-days.forEach(function (day) {
+forecast.forEach(function (forecastDay) {
   forecastHTML =
     forecastHTML +
     `
   <li>
-   <span class="weather-forecast-date">${day}</span>
+   <span class="weather-forecast-date">${dayFormat(forecastDay.time)}</span>
    <img
-     src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-     alt="sunny icon"
-     width="50"
+     src="${forecastDay.condition.icon_url}"
+          alt=""
+          width="50"
    />
-   <span class="weather-forecast-temp">27° 13° </span>
+   <span class="weather-forecast-temp">${Math.round(forecastDay.temperature.maximum)}° ${Math.round(
+      forecastDay.temperature.minimum)}°</span>
  </li>`;
 })
 
@@ -122,6 +128,7 @@ temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperature = null;
+
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
