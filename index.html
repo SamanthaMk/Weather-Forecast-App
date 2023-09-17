@@ -3,46 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href="htps://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrapstylesheet"/>
-<link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/style.css" />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <title>Weather Forecast App</title>
   </head>
   <body>
+    <div>
     <div class="container">
-      <div class="weather">
-        <h1>Weather Forecast App</h1>
-        <form id="search-form">
-          <input type="search" placeholder="Enter your City..." class="form-control" id="city-search" autocomplete="off"/>
-        <input type="submit" value="Search"/>
-              </form>
-        <h2 id="city"></h2>
-        <h3>Last Update At: <span id="date"></span></h3>
-        <div class="d-flex weather-temp">
+    <div class="pic-gradient"></div>
+      <div class="today-info">
+      <div class="left-info">
+        <h2 id="city"><br/>x</h2>
+        <br/>
+        <h3><br/><br/><span id="date"></span>
+        </h3>
+        <div class="today-weather">
           <img
             src=""
             width="60"
             id="icon"
-            class="float-left"
-          />
-          <div>
-            <strong id="temperature"></strong><br/><span class="units">°C</span>
-          </div>
+            />
+    <strong id="temperature"><br/></strong><span class="units">°C</span>
+        <h4 id="description"></h4>
         </div>
-        <div class="row">
-          <div class="col-3">
+        </div>
+        <div class="right-info">
+          <div class="day-info">
+            <div class="search-button">
+         <form id="search-form">
+          <input type="search" placeholder="Enter your City..." class="form-control" id="city-search" autocomplete="off"/>
+        <input type="submit" value="Search"/>
+              </form>
+              <br/>
+              </div>
             <ul>
-              <li id="description"></li>
-              <li>Humidity: <span id="humidity"></span> %</li>
-              <li>Wind: <span id="wind"></span> km/h</li>
+              <li>Humidity:  <span id="humidity"></span> %</li>
+              <li>Wind:<span id="wind"></span> km/h</li>
             </ul>
             <br />
             <div class="weather-forecast" id="forecast"></div>
             <script src="src/index.js"></script>
           </div>
-        </div>
+          
       </div>
+    
     </div>
+    </div>
+    <br/>
     <small>
       <a
         href="https://github.com/SamanthaMk/Weather-Forecast-App"
@@ -53,4 +60,3 @@
       </a>
     </small>
   </body>
-</html>

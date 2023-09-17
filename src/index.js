@@ -44,7 +44,7 @@ forecast.forEach(function (forecastDay) {
    <img
      src="${forecastDay.condition.icon_url}"
           alt=""
-          width="50"
+          width="40"
    />
    <span class="weather-forecast-temp">${Math.round(forecastDay.temperature.maximum)}° ${Math.round(
       forecastDay.temperature.minimum)}°</span>
