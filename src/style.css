@@ -21,36 +21,38 @@ justify-content: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   margin: 0 auto;
   padding:0 ;
+
 }
+
 
 h2{
   font-size: 35px;
   font-weight: 700;
   margin: 10px;
+  
 }
 h3{
   font-size: 22px;
   font-weight: 700;
   margin: 20px;
+  color: rgb(11, 11, 37);
 }
 h4{
   font-size: 28px;
   margin-left: 45px;
+  color: rgb(8, 8, 87);
 }
 .left-info{
-  width: 300px;
+  width:280px;
   height:480px;
 display: flex;
 justify-content: center;
-border-radius: 10px; 
-margin-top: ;
-background-color: blue;
-background-size: cover;
+border-radius: 10px;
 background-position: center;
-transform: scale(1.03); perspective: 200px;
-cursor: pointer;
-box-shadow: 0 0 20px -10px rrgba(0, 0, 0, 0.2);
-transition: all 0.3s ease;
+background: linear-gradient(109.5deg, rgb(13, 11, 136) 9.4%, rgb(86, 255, 248) 78.4%);
+background-size: cover;
+transform: scale(1.03) perspective(200px);
+box-shadow: 0 0 20px;
 
 }
 
@@ -90,6 +92,7 @@ margin-left:50px;
 
 strong{
   font-size: 45px;
+  color:#fdf7f7;
 }
 
 .day-info{
@@ -132,3 +135,24 @@ ul{
   color: #0e141e;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
 }
+
+::placeholder{
+  color: rgb(20, 20, 91);
+}
+
+input[type=search]{
+  padding: 5px;
+  border: 1px solid #efc9af;
+  border-radius: 4px;
+}
+
+input[type=submit]{
+  padding: 7px;
+  border: 1px solid;
+  border-radius: 4px;
+}
+ a{
+  font-size: 20px;
+  color: rgb(20, 20, 59);
+  padding: 4px;
+ }
